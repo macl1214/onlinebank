@@ -1,0 +1,22 @@
+.navbar {
+	font-family: 'Open Sans', sans-serif;	
+}
+
+/* 
+	em: 
+		The numeric value acts as a multiplier of the font-size property 
+		of the element on which it is used.  
+		
+	rem:
+		rem values are relative to the root html element, not the parent 
+		element. In other words, it lets you specify a font size in a 
+		relative fashion without being affected by the size of the parent, 
+		thereby eliminating compounding.
+*/
+.navbar-brand {
+	font-size: 1.5rem;
+}
+
+.nav-links {
+	font-size: 0.8rem;
+}

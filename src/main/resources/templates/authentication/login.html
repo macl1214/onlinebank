@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en"
+			xmlns:th="https://www.thymeleaf.org">
+	
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+   
+  <title>Login Page</title>
+	
+	<script th:replace="~{partials/necessary :: font-aw}"></script>
+	<link th:replace="~{partials/necessary :: bs-link}">
+	<th:block th:replace="~{partials/necessary :: fonts}"></th:block>
+	
+</head>
+  
+<body>
+
+	<nav th:replace="~{partials/navs :: navbar}"></nav>
+	
+	<div class="container">
+		<h1>Login Page</h1>
+		
+		<div th:if="${param.error}">
+			Invalid username and password.
+		</div>
+		<div th:if="${param.logout}">
+			You have been logged out.
+    </div>
+		<form th:action="@{/login}" method="POST">
+			<div class="mb-3">
+			    <label for="username" class="form-label">Username</label>
+			    <input type="text" class="form-control" id="username" name="username">
+			  </div>
+			  <div class="mb-3">
+			    <label for="password" class="form-label">Password</label>
+			    <input type="password" class="form-control" id="password" name="password">
+			  </div>
+			  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+
+	<script th:replace="~{partials/necessary :: bs-script}"></script>
+</body>
+
+</html>
