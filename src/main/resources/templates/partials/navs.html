@@ -1,7 +1,8 @@
 <!doctype html>
 
 <html lang="en"
-			xmlns:th="https://www.thymeleaf.org">
+			xmlns:th="https://www.thymeleaf.org"
+			xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
 	<meta charset="utf-8">
@@ -12,25 +13,30 @@
 <body>
 
 	<div th:fragment="navbar">
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-lg border-bottom">
 		  <div class="container-fluid">
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
-		    <a class="navbar-brand" th:href="@{/}"><i class="fa-solid fa-dog"></i> OSO</a>
+		    <a class="navbar-brand" th:href="@{/}"><i class="fa-solid fa-dog"></i><span class="user-select-none ms-1">OSO</span></a>
 		    <div class="collapse navbar-collapse row" id="navbarTogglerDemo02">
 		      <div class="navbar-nav justify-content-end text-center nav-links">
-		        <div class="nav-item col-1">
+		        <div class="nav-item col-md-1">
 		          <a class="nav-link active" aria-current="page" th:href="@{/aboutUs}">About Us</a>
 		        </div>
-		        <div class="nav-item col-1">
+		        <div class="nav-item col-md-1">
 		          <a class="nav-link" href="#">Features</a>
 		        </div>
-		        <div class="nav-item col-1">
+		        <div class="nav-item col-md-1">
 		          <a class="nav-link" href="#">Disabled</a>
 		        </div>
-		        <div class="nav-item col-1 offset-md-1">
-		        	<a class="nav-link btn btn-outline-secondary" th:href="@{/login}">Login</a>
+		        <div sec:authorize="!isAuthenticated()" class="nav-item col-1 offset-md-1">
+		        	<a class="btn btn-outline-secondary" th:href="@{/login}">Login</a>
+		        </div>
+		        <div sec:authorize="isAuthenticated()" class="nav-item col-1 offset-md-1">
+		        	<form th:action="@{/logout}" method="post">
+			        	<button class="btn btn-outline-danger">Logout</button>
+		        	</form>
 		        </div>
 		      </div>
 		    </div>
