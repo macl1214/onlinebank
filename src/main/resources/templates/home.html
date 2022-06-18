@@ -10,8 +10,9 @@
  	<title>OSO Online Banking</title>
 
 	<script th:replace="~{partials/necessary :: font-aw}"></script>
-	<link th:replace="~{partials/necessary :: bs-link}">
+	<link th:replace="~{partials/necessary :: bs-link}"/>
 	<th:block th:replace="~{partials/necessary :: fonts}"></th:block>
+	<link th:replace="~{partials/necessary :: landing-help}"/>
 	
 </head>
 
@@ -19,8 +20,66 @@
 	
 	<div th:replace="~{partials/navs :: navbar}"></div>
 	
-	<div class="container">
-		<h1 class="text-center" th:inline="text">Welcome, [[${#httpServletRequest.remoteUser}]], to OSO Online Banking</h1>
+	<div class="container my-3">
+		
+		<th:block sec:authorize="!isAuthenticated()">
+			<h1 class="text-center">Welcome to OSO Online Banking</h1>
+		</th:block>
+		
+		<th:block sec:authorize="isAuthenticated()">
+			<div id="help">
+				<div class="row mb-3">
+					<div class="col-6 offset-3 text-center">
+						<h3>How can we help?</h3>
+					</div>
+				</div>
+				<div class="row text-center">
+					<div class="col-2 offset-md-3 border-end">
+						<a th:href="@{/}" class="help-links">
+							<div class="row justify-content-center mb-2">
+								<div class="col">
+									<i class="fa-solid fa-credit-card fa-2xl"></i>
+								</div>
+							</div>
+							<div class="row justify-content-center">
+								<p class="col">
+									Credit Card
+								</p>
+							</div>
+						</a>
+					</div>
+					<div class="col-2 border-end">
+						<a th:href="@{/}" class="help-links">
+							<div class="row justify-content-center mb-2">
+								<div class="col">
+									<i class="fa-solid fa-building-columns fa-2xl"></i>
+								</div>
+							</div>
+							<div class="row justify-content-center">
+								<p class="col">
+									Online Banking
+								</p>
+							</div>
+						</a>
+					</div>
+					<div class="col-2">
+						<a th:href="@{/}" class="help-links">
+							<div class="row justify-content-center mb-2">
+								<div class="col">
+									<i class="fa-solid fa-credit-card fa-2xl"></i>
+								</div>
+							</div>
+							<div class="row justify-content-center">
+								<p class="col">
+									Loan
+								</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</th:block>
+		
 	</div>
 
 	<script th:replace="~{partials/necessary :: bs-script}"></script>

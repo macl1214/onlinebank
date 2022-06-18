@@ -19,7 +19,7 @@
 
 	<nav th:replace="~{partials/navs :: navbar}"></nav>
 	
-	<div class="container">
+	<div class="container my-3">
 		<h1>Login Page</h1>
 		
 		<div th:if="${param.error}">
@@ -39,6 +39,14 @@
 			  </div>
 			  <button type="submit" class="btn btn-primary">Submit</button>
 		</form>
+		<div class="my-3">
+			<div class="row">
+				<a th:href="@{/}">Forgot User ID/Password?</a>
+			</div>
+			<div class="row">
+				<a th:href="@{/register}">Create new account</a>
+			</div>		
+		</div>
 	</div>
 
 	<script th:replace="~{partials/necessary :: bs-script}"></script>
