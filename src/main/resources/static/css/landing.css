@@ -2,3 +2,32 @@
 	text-decoration:none;
 	color:black;
 }
+
+.subheading {
+	background-color: #83C5BE;
+	position: relative;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.welcome-message {
+	font-family: Roboto, sans-serif;
+	font-size: 32px;
+}
+
+.subheading:before {
+  content:"";
+  background-color: #83C5BE;
+  position: absolute;
+  height: 100%;
+  width: 200vw;
+  left: -100vw;
+  z-index: -1;
+}
+
+.home-login {
+	background-color: #EDF6F9;
+	border: 1px #EDF6F9 solid;
+	padding: 16px 16px;
+	border-radius: 5px;
+}

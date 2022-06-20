@@ -29,24 +29,28 @@
 				<h3 class="text-center">Registration Page</h3>
 				<form class="row gx-3 gy-2 mt-2" th:action="@{/register}" th:object="${user}" method="post">
 				  <div class="col-md-6">
-				    <label for="firstName" class="form-label col-form-label-sm">First Name</label>
-				    <input type="text" class="form-control form-control-sm" id="firstName">
-				  </div>
+				    <label for="firstName" class="form-label col-form-label-sm">First Name</label> <input type="text" class="form-control form-control-sm"
+									 th:field="*{firstName}" id="firstName">
+					</div>
 				  <div class="col-md-6">
 				    <label for="lastName" class="form-label col-form-label-sm">Last Name</label>
-				    <input type="text" class="form-control form-control-sm" id="lastName">
+				    <input type="text" class="form-control form-control-sm" 
+				    			 th:field="*{lastName}" id="lastName">
 				  </div>
 				  <div class="col-12">
 				  	<label for="username" class="form-label col-form-label-sm">Username</label>
-				  	<input type="text" class="form-control form-control-sm" id="username">
+				  	<input type="text" class="form-control form-control-sm" 
+				  				 th:field="*{username}" id="username">
 				  </div>
 				  <div class="col-12">
 				  	<label for="email" class="form-label col-form-label-sm">Email</label>
-				  	<input type="email" class="form-control form-control-sm" id="email">
+				  	<input type="email" class="form-control form-control-sm" 
+				  				 th:field="*{email}" id="email">
 				  </div>
 				  <div class="col-12">
 				  	<label for="password" class="form-label col-form-label-sm">Password</label>
-				  	<input type="password" class="form-control form-control-sm" id="password">
+				  	<input type="password" class="form-control form-control-sm" 
+				  				 th:field="*{password}" id="password">
 				  </div>
 				  <div class="col-12">
 				    <label for="inputAddress" class="form-label col-form-label-sm">Address</label>
