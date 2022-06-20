@@ -4,11 +4,11 @@ jQuery(document).ready(function($) {
     //console.log(document);
     if (ww < 1000) {
 			$('.reg-image').hide();
-      $('.reg-form').removeClass('col-4');
-      $('.reg-form').addClass('offset-2 col-8');
+      $('.reg-section').removeClass('col-4');
+      $('.reg-section').addClass('offset-2 col-8');
     } else if (ww >= 1001) {
-			$('.reg-form').addClass('col-4');
-      $('.reg-form').removeClass('col-8 offset-2');
+			$('.reg-section').addClass('col-4');
+      $('.reg-section').removeClass('col-8 offset-2');
       $('.reg-image').show();
     };
   };
