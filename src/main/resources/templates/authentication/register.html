@@ -18,11 +18,10 @@
   
 <body>
 
-	<div th:replace="~{partials/navs :: navbar}"></div>
-	
-	<div class="container my-3">
-	<!-- Main Content Goes Here -->		
-		<div class="container row">
+	<div class="container">
+		
+		<!-- Main Content Goes Here -->		
+		<div class="container row py-5">
 			<div class="col-4 offset-md-2 reg-image">
 				<img class="w-100 h-100" alt="city" th:src="@{/assets/images/registration-page.jpg}">
 			</div>
@@ -77,9 +76,9 @@
 				  <div class="col-md-4 form-floating">
 				    <select id="inputState" class="form-select form-select-sm"
 				    				th:field="*{address.state}" >
-				      <option selected
-				      				th:value="AL">AL</option>
-				      <option th:value="...">...</option>
+				      <option th:each="state : ${states}"
+				      				th:value="${state.key}"
+				      				th:text="${state.value}"></option>
 				    </select>
 				    <label for="inputState">State</label>
 				  </div>
@@ -92,6 +91,9 @@
 				    <button type="submit" class="btn btn-primary">Register</button>
 				  </div>
 				</form>
+				<div class="mt-3">
+					Already have an account? <a class="login-lk" th:href="@{/login}">Sign in</a>
+				</div>
 			</div>
 		</div>
 	</div>

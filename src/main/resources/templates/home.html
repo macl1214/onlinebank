@@ -19,10 +19,10 @@
 <body>
 	
 	<div class="container">
-		<div th:replace="~{partials/navs :: navbar}"></div>
+		<nav th:replace="~{partials/navs :: navbar}"></nav>
 		
 		<th:block sec:authorize="!isAuthenticated()">
-			<div class="subheading row justify-content-between align-items-center">
+			<div class="subheading row justify-content-between align-items-center ">
 				<div class="col-4">
 					<div class="welcome-message">
 						Cash back on cash just makes sense

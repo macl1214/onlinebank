@@ -6,13 +6,7 @@
 .subheading {
 	background-color: #83C5BE;
 	position: relative;
-	padding-top: 16px;
-	padding-bottom: 16px;
-}
-
-.welcome-message {
-	font-family: Roboto, sans-serif;
-	font-size: 32px;
+	padding: 24px;
 }
 
 .subheading:before {
@@ -23,6 +17,11 @@
   width: 200vw;
   left: -100vw;
   z-index: -1;
+}
+
+.welcome-message {
+	font-family: Roboto, sans-serif;
+	font-size: 32px;
 }
 
 .home-login {

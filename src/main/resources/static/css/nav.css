@@ -1,6 +1,8 @@
 .navbar {
-	font-family: 'Open Sans', sans-serif;	
+	font-family: 'Open Sans', sans-serif;
 }
+
+
 
 /* 
 	em: 
@@ -14,7 +16,9 @@
 		thereby eliminating compounding.
 */
 .navbar-brand {
-	font-size: 1.5rem;
+	font-size: 2.0rem;
+	padding-left: 12px;
+	margin: 0;
 }
 
 .nav-links {
