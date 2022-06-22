@@ -18,28 +18,30 @@
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
 	    <a class="navbar-brand" th:href="@{/}"><i class="fa-solid fa-dog"></i><span class="user-select-none ms-1">OSO</span></a>
-	    <div class="collapse navbar-collapse row" id="navbarTogglerDemo02">
-	      <div class="navbar-nav justify-content-end text-center nav-links">
-	        <div class="nav-item col-md-1">
-	          <a class="nav-link active" aria-current="page" th:href="@{/aboutUs}">About</a>
-	        </div>
-	        <div class="nav-item col-md-1">
-	          <a class="nav-link" href="#">Features</a>
-	        </div>
-	        <div class="nav-item col-md-1">
-	          <a class="nav-link" href="#">Disabled</a>
-	        </div>
-	        <div class="nav-item col-1">
-	        	<div sec:authorize="!isAuthenticated()">
-		        	<a class="btn btn-outline-secondary" th:href="@{/login}">Login</a>
-	        	</div>
-		        <div sec:authorize="isAuthenticated()">
-		        	<form th:action="@{/logout}" method="post">
-			        	<button class="btn btn-outline-danger">Logout</button>
-		        	</form>
+    	<div class="container">
+		    <div class="collapse navbar-collapse row" id="navbarTogglerDemo02">
+		      <div class="navbar-nav justify-content-end text-center nav-links">
+		        <div class="nav-item col-md-1">
+		          <a class="nav-link active" aria-current="page" th:href="@{/aboutUs}">About</a>
 		        </div>
-	        </div>
-	      </div>
+		        <div class="nav-item col-md-1">
+		          <a class="nav-link" href="#">Features</a>
+		        </div>
+		        <div class="nav-item col-md-1">
+		          <a class="nav-link" th:href="@{/samplePortal}">Sample</a>
+		        </div>
+		        <div class="nav-item col-md-1">
+		        	<div sec:authorize="!isAuthenticated()">
+			        	<a class="btn btn-outline-secondary" th:href="@{/login}">Login</a>
+		        	</div>
+			        <div sec:authorize="isAuthenticated()">
+			        	<form th:action="@{/logout}" method="post">
+				        	<button class="btn btn-outline-danger">Logout</button>
+			        	</form>
+			        </div>
+		        </div>
+		      </div>
+		    </div>
 	    </div>
 	  </div>
 	</nav>

@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html lang="en"
+	  	xmlns:th="https://www.thymeleaf.org"
+	  	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<title>OSO Online Banking</title>
+
+	<script th:replace="~{partials/necessary :: font-aw}"></script>
+	<link th:replace="~{partials/necessary :: bs-link}"/>
+	<th:block th:replace="~{partials/necessary :: fonts}"></th:block>	
+</head>
+
+<body>
+	
+	<div class="container" id="page">
+		<nav th:replace="~{partials/navs :: navbar}"></nav>
+		
+		<div class="container">
+			<img th:src="@{/assets/images/sample-portal.jpg}" alt="Sample portal"
+					 class="mx-auto d-block">
+		</div>
+		
+	</div>
+
+	<script th:replace="~{partials/necessary :: bs-script}"></script>
+	<script th:replace="~{partials/necessary :: jQuery}"></script>
+	<script type="text/javascript" th:src="@{/js/layout.js}"></script>
+</body>
+
+</html>

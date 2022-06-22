@@ -6,7 +6,7 @@
 .subheading {
 	background-color: #83C5BE;
 	position: relative;
-	padding: 24px;
+	padding: 24px 12px;
 }
 
 .subheading:before {

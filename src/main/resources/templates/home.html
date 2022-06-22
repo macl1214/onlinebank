@@ -18,93 +18,97 @@
 
 <body>
 	
-	<div class="container">
+	<div class="container" id="page">
 		<nav th:replace="~{partials/navs :: navbar}"></nav>
 		
-		<th:block sec:authorize="!isAuthenticated()">
-			<div class="subheading row justify-content-between align-items-center ">
-				<div class="col-4">
-					<div class="welcome-message">
-						Cash back on cash just makes sense
+		<div class="container">
+			<th:block sec:authorize="!isAuthenticated()">
+				<div class="subheading row justify-content-between align-items-center ">
+					<div class="col-4 px-0">
+						<div class="welcome-message">
+							Cash back on cash just makes sense
+						</div>
+						<a th:href="@{/}">Start earning</a>
 					</div>
-					<a th:href="@{/}">Start earning</a>
-				</div>
-				<div class="col-4">
-					<div class="home-login">
-						<h4 class="text-center">Secure Account Login</h4>
-						<form class="home-form" th:action="@{/login}" method="POST">
-							<div class="username form-floating mb-3">
-						    <input type="text" class="form-control" id="username" name="username">
-						    <label for="username" >Username</label>
-						  </div>
-						  <div class="password form-floating mb-3">
-						    <input type="password" class="form-control" id="password" name="password">
-						    <label for="password">Password</label>
-						  </div>
-						  <button type="submit" class="btn btn-primary">Submit</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</th:block>
-		
-		<th:block sec:authorize="isAuthenticated()">
-			<div id="help">
-				<div class="row mb-3">
-					<div class="col-6 offset-3 text-center">
-						<h3>How can we help?</h3>
+					<div class="col-4">
+						<div class="home-login">
+							<h4 class="text-center">Secure Account Login</h4>
+							<form class="home-form" th:action="@{/login}" method="POST">
+								<div class="username form-floating mb-3">
+							    <input type="text" class="form-control" id="username" name="username">
+							    <label for="username" >Username</label>
+							  </div>
+							  <div class="password form-floating mb-3">
+							    <input type="password" class="form-control" id="password" name="password">
+							    <label for="password">Password</label>
+							  </div>
+							  <button type="submit" class="btn btn-primary">Submit</button>
+							</form>
+						</div>
 					</div>
 				</div>
-				<div class="row text-center">
-					<div class="col-2 offset-md-3 border-end">
-						<a th:href="@{/}" class="help-links">
-							<span class="row justify-content-center mb-2">
-								<span class="col">
-									<i class="fa-solid fa-credit-card fa-2xl"></i>
-								</span>
-							</span>
-							<span class="row justify-content-center">
-								<span class="col">
-									Credit Card
-								</span>
-							</span>
-						</a>
+			</th:block>
+			
+			<th:block sec:authorize="isAuthenticated()">
+				<div id="help">
+					<div class="row mb-3">
+						<div class="col-6 offset-3 text-center">
+							<h3>How can we help?</h3>
+						</div>
 					</div>
-					<div class="col-2 border-end">
-						<a th:href="@{/}" class="help-links">
-							<span class="row justify-content-center mb-2">
-								<span class="col">
-									<i class="fa-solid fa-building-columns fa-2xl"></i>
+					<div class="row text-center">
+						<div class="col-2 offset-md-3 border-end">
+							<a th:href="@{/}" class="help-links">
+								<span class="row justify-content-center mb-2">
+									<span class="col">
+										<i class="fa-solid fa-credit-card fa-2xl"></i>
+									</span>
 								</span>
-							</span>
-							<span class="row justify-content-center">
-								<span class="col">
-									Online Banking
+								<span class="row justify-content-center">
+									<span class="col">
+										Credit Card
+									</span>
 								</span>
-							</span>
-						</a>
-					</div>
-					<div class="col-2">
-						<a th:href="@{/}" class="help-links">
-							<span class="row justify-content-center mb-2">
-								<span class="col">
-									<i class="fa-solid fa-credit-card fa-2xl"></i>
+							</a>
+						</div>
+						<div class="col-2 border-end">
+							<a th:href="@{/}" class="help-links">
+								<span class="row justify-content-center mb-2">
+									<span class="col">
+										<i class="fa-solid fa-building-columns fa-2xl"></i>
+									</span>
 								</span>
-							</span>
-							<span class="row justify-content-center">
-								<span class="col">
-									Loan
+								<span class="row justify-content-center">
+									<span class="col">
+										Online Banking
+									</span>
 								</span>
-							</span>
-						</a>
+							</a>
+						</div>
+						<div class="col-2">
+							<a th:href="@{/}" class="help-links">
+								<span class="row justify-content-center mb-2">
+									<span class="col">
+										<i class="fa-solid fa-credit-card fa-2xl"></i>
+									</span>
+								</span>
+								<span class="row justify-content-center">
+									<span class="col">
+										Loan
+									</span>
+								</span>
+							</a>
+						</div>
 					</div>
 				</div>
-			</div>
-		</th:block>
+			</th:block>
+		</div>
 		
 	</div>
 
 	<script th:replace="~{partials/necessary :: bs-script}"></script>
+	<script th:replace="~{partials/necessary :: jQuery}"></script>
+	<script type="text/javascript" th:src="@{/js/layout.js}"></script>
 </body>
 
 </html>
