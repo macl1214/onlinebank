@@ -20,8 +20,8 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public List<User> getUsers() {
 		
-		TypedQuery theQuery = entityManager.createQuery("FROM User",
-														User.class);
+		Query theQuery = entityManager.createQuery("FROM User",
+													User.class);
 		
 		List<User> users = theQuery.getResultList();
 		
@@ -64,6 +64,16 @@ public class UserDaoImpl implements UserDao {
 		}
 		
 		return user;
+	}
+
+	@Override
+	public User save(User user) {
+		
+		User dbUser = entityManager.merge(user);
+		
+		user.setId(dbUser.getId());
+		
+		return dbUser;
 	}
 
 	

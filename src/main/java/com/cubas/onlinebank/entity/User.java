@@ -40,6 +40,8 @@ public class User {
 	@Column(name="password")
 	private String password;
 	
+//	private Address address;
+	
 	@Column(name="active")
 	private Boolean active;
 	
