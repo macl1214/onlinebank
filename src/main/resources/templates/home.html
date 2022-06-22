@@ -47,9 +47,6 @@
 						</div>
 					</div>
 				</div>
-			</th:block>
-			
-			<th:block sec:authorize="isAuthenticated()">
 				<div id="help">
 					<div class="row mb-3">
 						<div class="col-6 offset-3 text-center">
@@ -100,6 +97,43 @@
 							</a>
 						</div>
 					</div>
+				</div>
+			</th:block>
+			
+			<th:block sec:authorize="isAuthenticated()">
+				<div class="secondary-nav d-flex flex-row align-items-stretch gap-3">
+					<a th:href="@{/}" class="second-nav-item p-2 text-center d-flex flex-column align-items-center justify-content-center">
+						<span class="item-icon">
+							<i class="fa-solid fa-money-bills"></i>
+						</span>
+						<span class="item-label">
+							Overview
+						</span>
+					</a>
+					<a th:href="@{/}" class="second-nav-item p-2 text-center d-flex flex-column align-items-center justify-content-center">
+						<span class="item-icon">
+							<i class="fa-solid fa-money-check"></i>
+						</span>
+						<span class="item-label">
+							Accounts
+						</span>
+					</a>
+					<a th:href="@{/}" class="second-nav-item p-2 text-center d-flex flex-column align-items-center justify-content-center">
+						<span class="item-icon">
+							<i class="fa-solid fa-arrow-right-arrow-left"></i>
+						</span>
+						<span class="item-label">
+							Transfer
+						</span>
+					</a>
+					<a th:href="@{/}" class="second-nav-item p-2 text-center d-flex flex-column align-items-center justify-content-center">
+						<span class="item-icon">
+							<i class="fa-solid fa-file-invoice"></i>
+						</span>
+						<span class="item-label">
+							Bill Pay
+						</span>
+					</a>
 				</div>
 			</th:block>
 		</div>

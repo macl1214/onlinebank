@@ -30,3 +30,15 @@
 	padding: 16px 16px;
 	border-radius: 5px;
 }
+
+.second-nav-item {
+	font-size: 24px;
+	width: 150px;
+	text-decoration: none;
+	color: #000000;
+}
+
+.second-nav-item:hover {
+	background-color: #006D77;
+	color: #ffffff;
+}
